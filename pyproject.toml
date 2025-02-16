@@ -1,16 +1,18 @@
 [project]
 name = "ai-data-scientist"
 version = "0.1.0"
-description = "Add your description here"
+description = "A data scientist powered by AI"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "chromadb>=0.6.3",
     "kagglehub==0.3.6",
     "kaleido==0.2.1",
+    "langchain-experimental>=0.3.4",
     "langchain-openai>=0.3.5",
     "langgraph>=0.2.71",
     "langgraph-supervisor>=0.0.2",
     "python-dotenv>=1.0.1",
+    "scikit-learn>=1.6.1", # [optional] for example code execution from coder
     "vanna>=0.7.6",
 ]
