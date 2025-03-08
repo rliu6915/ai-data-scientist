@@ -8,13 +8,15 @@ dependencies = [
     "chromadb>=0.6.3",
     "kagglehub==0.3.6",
     "kaleido==0.2.1",
+    "langchain-deepseek>=0.1.2",
     "langchain-experimental>=0.3.4",
     "langchain-openai>=0.3.5",
     "langgraph>=0.2.71",
     "langgraph-supervisor>=0.0.2",
     "python-dotenv>=1.0.1",
     "python-pptx>=1.0.2",
-    "scikit-learn>=1.6.1",
-    "streamlit>=1.42.0", # [optional] for example code execution from coder
+    "scikit-learn>=1.6.1", # [optional] for example code execution from coder
+    "statsmodels>=0.14.4", # [optional] for example code execution from coder
+    "streamlit>=1.42.0",
     "vanna>=0.7.6",
 ]

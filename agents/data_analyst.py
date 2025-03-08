@@ -15,7 +15,7 @@ from langchain_core.runnables import RunnableConfig
 
 from vanna.chromadb import ChromaDB_VectorStore
 
-from agents.llm import get_azure_openai_client, build_llm
+from agents.llm.llm import build_llm, get_llm_client
 from langgraph.graph import StateGraph, END
 
 from dotenv import load_dotenv
@@ -28,11 +28,11 @@ class DataAnalystVanna(ChromaDB_VectorStore, OpenAI_Chat):
 
     def __init__(self, config=None):
         ChromaDB_VectorStore.__init__(self, config=config)
-        azure_openai_client = get_azure_openai_client()
+        azure_openai_client = get_llm_client()
         OpenAI_Chat.__init__(self, client=azure_openai_client, config=config)
 
 
-vn = DataAnalystVanna(config={"model": "gpt-4o-mini", "client": "persistent", "path": "./vanna-db"})
+vn = DataAnalystVanna(config={"model": os.getenv("MODEL_NAME"), "client": "persistent", "path": "./vanna-db"})
 vn.connect_to_sqlite(os.getenv("SQLITE_DATABASE_NAME", "data/sales-and-customer-database.db"))
 training_data = vn.get_training_data()
 print("training_data", training_data)
@@ -86,7 +86,7 @@ def visualize_data(user_input: str) -> dict:
             "sql": sql,
             "execution_result": str(df),
             "plotly_code": plotly_code,
-            "plotly_figure": fig
+            "plotly_figure": fig.to_dict()
         }
     except Exception as e:
         return {
@@ -99,7 +99,7 @@ def visualize_data(user_input: str) -> dict:
 
 tools = [answer_question_about_data, visualize_data]
 model = build_llm()
-model = model.bind_tools(tools)
+model = model.bind_tools(tools, parallel_tool_calls=False)
 
 tools_by_name = {tool.name: tool for tool in tools}
 
