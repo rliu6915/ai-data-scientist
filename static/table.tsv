@@ -1,6 +1,0 @@
-	Human Data Scientist	AI Data Scientist
-Input	"Accepts business problems or questions in natural language, often clarified through meetings."	Accepts business problems or questions in natural language via predefined prompts or structured inputs.
-Problem-Solving	"Breaks down complex problems into smaller tasks using logic, creativity, and experience."	Breaks down problems into smaller tasks using predefined workflows and trained knowledge.
-Skillset	"Coding (Python, SQL, R etc.), data analysis, machine learning, data visualization, communication."	"Coding (any language), data analysis, machine learning, data visualization, natural language generation."
-Knowledge	"Combines domain expertise, experience, and external research to solve problems."	"Draws from trained models, integrated tools, and external data sources (limited by training and scope)."
-Output	"Produces actionable insights, reports, dashboards, or models tailored to the audience."	"Produces actionable insights, reports, dashboards, or models, given the right tools."
