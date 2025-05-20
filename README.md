@@ -3,6 +3,8 @@
 A hierarchical multi-agent system to mimic the job duties of a data scientist,
 built using LangGraph and vanna.ai.
 
+Medium article: [AI Data Scientist: An Attempt to Replace My Own Job](https://medium.com/the-beta-labs-tech-blog/ai-data-scientist-an-attempt-to-replace-my-own-job-2e485c9a1892)
+
 ## Features
 
 - Coder Agent: Generates and executes Python code, returning results.
